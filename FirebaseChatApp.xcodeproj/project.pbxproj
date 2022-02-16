@@ -19,6 +19,11 @@
 		3197AFA427BAEE0800575CEF /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AFA327BAEE0800575CEF /* VideoPlayerViewController.swift */; };
 		3197AFA627BAEE1E00575CEF /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AFA527BAEE1E00575CEF /* NewConversationViewController.swift */; };
 		3197AFA827BAEE2A00575CEF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AFA727BAEE2A00575CEF /* ProfileViewController.swift */; };
+		3197AFAB27BBC9E200575CEF /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AFAA27BBC9E200575CEF /* AppConstants.swift */; };
+		3197AFAD27BBD0B100575CEF /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AFAC27BBD0B100575CEF /* ViewExtension.swift */; };
+		3197AFB127BBF2E900575CEF /* TextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AFB027BBF2E900575CEF /* TextFieldExt.swift */; };
+		3197AFB327BC1E0100575CEF /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AFB227BC1E0100575CEF /* StringExt.swift */; };
+		3197AFB527BC1E9C00575CEF /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AFB427BC1E9C00575CEF /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		3197AFA327BAEE0800575CEF /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		3197AFA527BAEE1E00575CEF /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		3197AFA727BAEE2A00575CEF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3197AFAA27BBC9E200575CEF /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		3197AFAC27BBD0B100575CEF /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		3197AFB027BBF2E900575CEF /* TextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExt.swift; sourceTree = "<group>"; };
+		3197AFB227BC1E0100575CEF /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		3197AFB427BC1E9C00575CEF /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +91,11 @@
 			isa = PBXGroup;
 			children = (
 				3197AF8727BAEAA600575CEF /* ConversationsViewController.swift */,
-				3197AF9D27BAEDDA00575CEF /* LoginViewController.swift */,
-				3197AF9F27BAEDE300575CEF /* RegisterViewController.swift */,
 				3197AFA127BAEDFD00575CEF /* PhototViewerViewController.swift */,
 				3197AFA327BAEE0800575CEF /* VideoPlayerViewController.swift */,
 				3197AFA527BAEE1E00575CEF /* NewConversationViewController.swift */,
 				3197AFA727BAEE2A00575CEF /* ProfileViewController.swift */,
+				3197AFA927BBC93800575CEF /* Login */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,8 +118,10 @@
 		3197AF9A27BAEACF00575CEF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3197AF9C27BAEB0A00575CEF /* Lifecycle */,
 				3197AF8C27BAEAA900575CEF /* Assets.xcassets */,
+				3197AF9C27BAEB0A00575CEF /* Lifecycle */,
+				3197AFAF27BBD0C400575CEF /* Others */,
+				3197AFAE27BBD0B800575CEF /* Extension */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -131,6 +142,34 @@
 				3197AF8527BAEAA600575CEF /* SceneDelegate.swift */,
 			);
 			path = Lifecycle;
+			sourceTree = "<group>";
+		};
+		3197AFA927BBC93800575CEF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3197AF9D27BAEDDA00575CEF /* LoginViewController.swift */,
+				3197AF9F27BAEDE300575CEF /* RegisterViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3197AFAE27BBD0B800575CEF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3197AFAC27BBD0B100575CEF /* ViewExtension.swift */,
+				3197AFB027BBF2E900575CEF /* TextFieldExt.swift */,
+				3197AFB227BC1E0100575CEF /* StringExt.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3197AFAF27BBD0C400575CEF /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				3197AFAA27BBC9E200575CEF /* AppConstants.swift */,
+				3197AFB427BC1E9C00575CEF /* AlertController.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,14 +244,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3197AFA227BAEDFD00575CEF /* PhototViewerViewController.swift in Sources */,
+				3197AFB327BC1E0100575CEF /* StringExt.swift in Sources */,
 				3197AF9E27BAEDDA00575CEF /* LoginViewController.swift in Sources */,
 				3197AFA627BAEE1E00575CEF /* NewConversationViewController.swift in Sources */,
+				3197AFB527BC1E9C00575CEF /* AlertController.swift in Sources */,
 				3197AFA027BAEDE300575CEF /* RegisterViewController.swift in Sources */,
 				3197AFA427BAEE0800575CEF /* VideoPlayerViewController.swift in Sources */,
 				3197AF8827BAEAA600575CEF /* ConversationsViewController.swift in Sources */,
+				3197AFAD27BBD0B100575CEF /* ViewExtension.swift in Sources */,
 				3197AFA827BAEE2A00575CEF /* ProfileViewController.swift in Sources */,
 				3197AF8427BAEAA600575CEF /* AppDelegate.swift in Sources */,
 				3197AF8627BAEAA600575CEF /* SceneDelegate.swift in Sources */,
+				3197AFAB27BBC9E200575CEF /* AppConstants.swift in Sources */,
+				3197AFB127BBF2E900575CEF /* TextFieldExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
