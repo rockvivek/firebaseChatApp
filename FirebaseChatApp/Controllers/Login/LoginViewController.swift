@@ -135,6 +135,11 @@ class LoginViewController: UIViewController {
             return
         }
         //login steps
+        UserAuth.shared.loginUser(email: email, password: password) { isLogin in
+            if isLogin {
+                print("user login successfull")
+            }
+        }
     }
     
     @objc func didTapRegister() {

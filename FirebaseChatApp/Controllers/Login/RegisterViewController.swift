@@ -62,7 +62,6 @@ class RegisterViewController: UIViewController {
         textField.withImage(direction: .Left,
                             image: UIImage(named: "profile")!,
                             colorSeparator: .clear)
-        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -117,9 +116,9 @@ class RegisterViewController: UIViewController {
         imageView.layer.cornerRadius = imageView.width / 2.0
         
         firstnameTF.frame = CGRect(x: 25,
-                               y: imageView.bottom + 40,
-                               width: view.width - 50,
-                               height: 50)
+                                   y: imageView.bottom + 40,
+                                   width: view.width - 50,
+                                   height: 50)
         
         lastnameTF.frame = CGRect(x: 25,
                                   y: firstnameTF.bottom + 20,
@@ -137,16 +136,15 @@ class RegisterViewController: UIViewController {
                                   height: 50)
         
         registerButton.frame = CGRect(x: 25,
-                                   y: passwordTF.bottom + 40,
-                                   width: view.width - 50,
-                                   height: 50)
+                                      y: passwordTF.bottom + 40,
+                                      width: view.width - 50,
+                                      height: 50)
         
         imageView.isUserInteractionEnabled = true
         scrollView.isUserInteractionEnabled = true
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfielPic))
         imageView.addGestureRecognizer(gesture)
-        
     }
     
     //MARK: - functions
@@ -162,10 +160,10 @@ class RegisterViewController: UIViewController {
     
     //MARK: - Actions
     @objc func didTapChangeProfielPic() {
-           print("change profile pic called")
+        print("change profile pic called")
         presentPhotoActionSheet()
     }
-                               
+    
     @objc func registerButtonTapped() {
         
         //validation
@@ -190,6 +188,11 @@ class RegisterViewController: UIViewController {
             return
         }
         //signup steps
+        UserAuth.shared.createUser(email: email, password: password) { isUserCreated in
+            if isUserCreated {
+                print("new user craeted successfully")
+            }
+        }
     }
     
 }
