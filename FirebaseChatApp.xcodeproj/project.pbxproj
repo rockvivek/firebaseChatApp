@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		317C3DC927BECABC00FE74B9 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DC827BECABC00FE74B9 /* UserAuth.swift */; };
+		313B2C8727BED9F20059EAC0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313B2C8627BED9F20059EAC0 /* DatabaseManager.swift */; };
+		317C3DC927BECABC00FE74B9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DC827BECABC00FE74B9 /* AuthManager.swift */; };
 		3197AF8427BAEAA600575CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AF8327BAEAA600575CEF /* AppDelegate.swift */; };
 		3197AF8627BAEAA600575CEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AF8527BAEAA600575CEF /* SceneDelegate.swift */; };
 		3197AF8827BAEAA600575CEF /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AF8727BAEAA600575CEF /* ConversationsViewController.swift */; };
@@ -30,7 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		317C3DC827BECABC00FE74B9 /* UserAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		313B2C8627BED9F20059EAC0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		314FA61F27C0DC15006B5AD4 /* FirebaseChatApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseChatApp.entitlements; sourceTree = "<group>"; };
+		317C3DC827BECABC00FE74B9 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		3197AF8027BAEAA600575CEF /* FirebaseChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3197AF8327BAEAA600575CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3197AF8527BAEAA600575CEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +74,8 @@
 		317C3DC427BECA6100FE74B9 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				317C3DC827BECABC00FE74B9 /* UserAuth.swift */,
+				317C3DC827BECABC00FE74B9 /* AuthManager.swift */,
+				313B2C8627BED9F20059EAC0 /* DatabaseManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -97,6 +101,7 @@
 		3197AF8227BAEAA600575CEF /* FirebaseChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				314FA61F27C0DC15006B5AD4 /* FirebaseChatApp.entitlements */,
 				3197AF9A27BAEACF00575CEF /* Resources */,
 				3197AF9927BAEACA00575CEF /* Models */,
 				3197AF9827BAEABF00575CEF /* Views */,
@@ -334,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				313B2C8727BED9F20059EAC0 /* DatabaseManager.swift in Sources */,
 				3197AFA227BAEDFD00575CEF /* PhototViewerViewController.swift in Sources */,
 				3197AFB327BC1E0100575CEF /* StringExt.swift in Sources */,
 				3197AF9E27BAEDDA00575CEF /* LoginViewController.swift in Sources */,
@@ -344,7 +350,7 @@
 				3197AF8827BAEAA600575CEF /* ConversationsViewController.swift in Sources */,
 				3197AFAD27BBD0B100575CEF /* ViewExtension.swift in Sources */,
 				3197AFA827BAEE2A00575CEF /* ProfileViewController.swift in Sources */,
-				317C3DC927BECABC00FE74B9 /* UserAuth.swift in Sources */,
+				317C3DC927BECABC00FE74B9 /* AuthManager.swift in Sources */,
 				3197AF8427BAEAA600575CEF /* AppDelegate.swift in Sources */,
 				3197AF8627BAEAA600575CEF /* SceneDelegate.swift in Sources */,
 				3197AFAB27BBC9E200575CEF /* AppConstants.swift in Sources */,
@@ -496,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FirebaseChatApp/FirebaseChatApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KG94G4G9WV;
@@ -526,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FirebaseChatApp/FirebaseChatApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KG94G4G9WV;

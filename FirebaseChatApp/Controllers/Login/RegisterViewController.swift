@@ -188,11 +188,26 @@ class RegisterViewController: UIViewController {
             return
         }
         //signup steps
-        UserAuth.shared.createUser(email: email, password: password) { isUserCreated in
-            if isUserCreated {
-                print("new user craeted successfully")
+        //save user data to database
+        DatabaseManager.shared.userExist(with: email) { [weak self] exists in
+            guard let strongSelf = self else {
+                return
+            }
+            guard !exists else {
+                //user already exist
+                alertBoxWithOneButton(message: "Looks like a user account for this email id acocunt is already exist.")
+                return
+            }
+            AuthManager.shared.createUser(email: email, password: password) { isUserCreated in
+                if isUserCreated {
+                    print("new user craeted successfully")
+                    DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstname, lastName: lastname, emailID: email))
+                    self?.navigationController?.dismiss(animated: true, completion: nil)
+                }
             }
         }
+        
+        
     }
     
 }
