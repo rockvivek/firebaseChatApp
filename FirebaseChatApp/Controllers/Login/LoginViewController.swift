@@ -8,6 +8,8 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import Firebase
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
@@ -41,6 +43,8 @@ class LoginViewController: UIViewController {
     
     let fbLoginButton = FBLoginButton()
     
+    let googleLoginButton = GIDSignInButton()
+    
     private let emailTF: UITextField = {
         let textField = UITextField()
         textField.setupTextField(cornerRadius: textFieldValue.cornerRadius,
@@ -64,11 +68,24 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private var loginObserver: NSObjectProtocol?
+    
     //MARK: - lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Log In"
         view.backgroundColor = .white
+        
+        //add observer
+        loginObserver = NotificationCenter.default.addObserver(forName: Notification.Name.didLogInNotification,
+                                                               object: nil,
+                                                               queue: .main,
+                                                               using: { [weak self]_ in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+        })
         
         //show a bar button item on right of navigation bar
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
@@ -82,6 +99,14 @@ class LoginViewController: UIViewController {
         fbLoginButton.delegate = self
         emailTF.delegate = self
         passwordTF.delegate = self
+        
+        GIDSignIn.sharedInstance().presentingViewController = self
+    }
+    
+    deinit {
+        if let observer = loginObserver {
+            NotificationCenter.default.removeObserver(loginObserver)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -117,6 +142,11 @@ class LoginViewController: UIViewController {
                                      height: loginButton.height - 10)
         fbLoginButton.layer.cornerRadius = 12
         
+        googleLoginButton.frame = CGRect(x: loginButton.left + 30,
+                                         y: fbLoginButton.bottom + 20,
+                                         width: loginButton.width - 60,
+                                         height: loginButton.height - 10)
+        
     }
     
     //MARK: - functions
@@ -128,6 +158,7 @@ class LoginViewController: UIViewController {
         view.addSubview(scrollView)
         view.addSubview(fbLoginButton)
         view.addSubview(loginButton)
+        view.addSubview(googleLoginButton)
     }
     
     //MARK: - Actions
@@ -235,5 +266,10 @@ extension LoginViewController: LoginButtonDelegate {
         }
     }
     
+    
+}
+
+
+extension LoginViewController {
     
 }

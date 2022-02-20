@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		313B2C8727BED9F20059EAC0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313B2C8627BED9F20059EAC0 /* DatabaseManager.swift */; };
+		314FA62127C26CAD006B5AD4 /* NotificationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FA62027C26CAD006B5AD4 /* NotificationExt.swift */; };
 		317C3DC927BECABC00FE74B9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DC827BECABC00FE74B9 /* AuthManager.swift */; };
 		3197AF8427BAEAA600575CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AF8327BAEAA600575CEF /* AppDelegate.swift */; };
 		3197AF8627BAEAA600575CEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197AF8527BAEAA600575CEF /* SceneDelegate.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		313B2C8627BED9F20059EAC0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		314FA61F27C0DC15006B5AD4 /* FirebaseChatApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseChatApp.entitlements; sourceTree = "<group>"; };
+		314FA62027C26CAD006B5AD4 /* NotificationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExt.swift; sourceTree = "<group>"; };
 		317C3DC827BECABC00FE74B9 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		3197AF8027BAEAA600575CEF /* FirebaseChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3197AF8327BAEAA600575CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				3197AFAC27BBD0B100575CEF /* ViewExtension.swift */,
 				3197AFB027BBF2E900575CEF /* TextFieldExt.swift */,
 				3197AFB227BC1E0100575CEF /* StringExt.swift */,
+				314FA62027C26CAD006B5AD4 /* NotificationExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				3197AF7D27BAEAA600575CEF /* Frameworks */,
 				3197AF7E27BAEAA600575CEF /* Resources */,
 				A09CBE2467F3593DD9810AD6 /* [CP] Embed Pods Frameworks */,
+				8E63A40929D3F6852C03012A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,6 +319,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8E63A40929D3F6852C03012A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseChatApp/Pods-FirebaseChatApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseChatApp/Pods-FirebaseChatApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirebaseChatApp/Pods-FirebaseChatApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A09CBE2467F3593DD9810AD6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,6 +369,7 @@
 				3197AFA027BAEDE300575CEF /* RegisterViewController.swift in Sources */,
 				3197AFA427BAEE0800575CEF /* VideoPlayerViewController.swift in Sources */,
 				3197AF8827BAEAA600575CEF /* ConversationsViewController.swift in Sources */,
+				314FA62127C26CAD006B5AD4 /* NotificationExt.swift in Sources */,
 				3197AFAD27BBD0B100575CEF /* ViewExtension.swift in Sources */,
 				3197AFA827BAEE2A00575CEF /* ProfileViewController.swift in Sources */,
 				317C3DC927BECABC00FE74B9 /* AuthManager.swift in Sources */,
@@ -508,6 +530,8 @@
 				DEVELOPMENT_TEAM = KG94G4G9WV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirebaseChatApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "please allow access to select a photot for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -539,6 +563,8 @@
 				DEVELOPMENT_TEAM = KG94G4G9WV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirebaseChatApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "please allow access to select a photot for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
